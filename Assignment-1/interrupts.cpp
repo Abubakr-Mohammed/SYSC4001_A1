@@ -6,14 +6,20 @@
  */
 
 #include<interrupts.hpp>
+#include <tuple>
+#include <vector>
+#include <string>
+#include <fstream>
+#include <iostream>
+#include <cstdio>
 
 int main(int argc, char** argv) {
 
-    //vectors is a C++ std::vector of strings that contain the address of the ISR
-    //delays  is a C++ std::vector of ints that contain the delays of each device
-    //the index of these elemens is the device number, starting from 0
-    auto [vectors, delays] = parse_args(argc, argv);
-    std::ifstream input_file(argv[1]);
+    auto args_tuple = parse_args(argc, argv);
+    std::vector<std::string> vectors = std::get<0>(args_tuple);
+    std::vector<int> delays = std::get<1>(args_tuple);
+    
+    std::ifstream inputfile(argv[1]);
 
     std::string trace;      //!< string to store single line of trace file
     std::string execution;  //!< string to accumulate the execution output
