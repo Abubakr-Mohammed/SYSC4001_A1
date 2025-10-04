@@ -71,11 +71,15 @@ int main(int argc, char** argv) {
                          ", start IO for device " + std::to_string(devnum) + "\n";
             current_time += io_time;
         }
-
-
-
+        else if (activity == "ENDIO") {
+            int devnum = duration_intr;
+            int io_time = delays.at(devnum);
+            execution += std::to_string(current_time) + ", " +
+                         std::to_string(io_time) +
+                         ", ENDIO device " + std::to_string(devnum) + "\n";
+            current_time += io_time;
+        }
         /************************************************************************/
-
     }
 
     input_file.close();
