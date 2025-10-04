@@ -39,7 +39,6 @@ int main(int argc, char** argv) {
         }
         else if (activity == "SYSCALL"){
             int devnum = duration_intr;
-            // Interrupt boilerplate steps using macros ADDR_BASE and VECTOR_SIZE
             // Step 1: switch to kernel mode (1 ms)
             execution += std::to_string(current_time) + ", 1, switch to kernel mode\n";
             current_time += 1;
