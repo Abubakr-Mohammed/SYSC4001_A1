@@ -40,6 +40,19 @@ int main(int argc, char** argv) {
                          ", CPU burst of " + std::to_string(value) + " ms\n";
             current_time += value;
         }
+        else if (activity == "SYSCALL"){
+            int devnum = duration_intr;
+            // Interrupt boilerplate steps using macros ADDR_BASE and VECTOR_SIZE
+            // Step 1: switch to kernel mode (1 ms)
+            execution += std::to_string(current_time) + ", 1, switch to kernel mode\n";
+            current_time += 1;
+            // Step 2: context saved (10 ms)
+            execution += std::to_string(current_time) + ", 10, context saved\n";
+            current_time += 10;
+            // Step 3: find vector in memory (1 ms)
+            char vectoraddr[10];
+            snprintf(vectoraddr, sizeof(vectoraddr), "0x%04X", ADDR_BASE + devnum * VECTOR_SIZE);
+        }
 
 
 
