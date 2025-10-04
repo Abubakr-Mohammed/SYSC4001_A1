@@ -1,8 +1,8 @@
 /**
  *
  * @file interrupts.cpp
- * @author Abubakr Mohammed(101287262)
- *
+ * @author Abubakr Mohammed(101287262) Chikezilim Afulukwe(101279214)
+ * 
  */
 
 #include<interrupts.hpp>
@@ -23,18 +23,23 @@ int main(int argc, char** argv) {
 
     std::string trace;      //!< string to store single line of trace file
     std::string execution;  //!< string to accumulate the execution output
-
-    /******************ADD YOUR VARIABLES HERE*************************/
-
-
-
-    /******************************************************************/
+    int current_time = 0;
+    
 
     //parse each line of the input trace file
     while(std::getline(input_file, trace)) {
         auto [activity, duration_intr] = parse_trace(trace);
-
         /******************ADD YOUR SIMULATION CODE HERE*************************/
+        auto event = parse_trace(trace);
+        std::string activity = std::get<0>(event);
+        int value = std::get<1>(event);
+
+        if (activity == "CPU") {
+            execution += std::to_string(current_time) + ", " +
+                         std::to_string(value) +
+                         ", CPU burst of " + std::to_string(value) + " ms\n";
+            current_time += value;
+        }
 
 
 
