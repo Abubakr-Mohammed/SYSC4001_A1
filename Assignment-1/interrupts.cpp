@@ -30,15 +30,12 @@ int main(int argc, char** argv) {
     while(std::getline(input_file, trace)) {
         auto [activity, duration_intr] = parse_trace(trace);
         /******************ADD YOUR SIMULATION CODE HERE*************************/
-        auto event = parse_trace(trace);
-        std::string activity = std::get<0>(event);
-        int value = std::get<1>(event);
 
         if (activity == "CPU") {
             execution += std::to_string(current_time) + ", " +
-                         std::to_string(value) +
-                         ", CPU burst of " + std::to_string(value) + " ms\n";
-            current_time += value;
+                         std::to_string(duration_intr) +
+                         ", CPU burst of " + std::to_string(duration_intr) + " ms\n";
+            current_time += duration_intr;
         }
         else if (activity == "SYSCALL"){
             int devnum = duration_intr;
