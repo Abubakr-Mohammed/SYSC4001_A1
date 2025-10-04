@@ -1,0 +1,101 @@
+0, 49, CPU burst of 49 ms
+49, 1, switch to kernel mode
+50, 10, context saved
+60, 1, find vector 6 in memory position 0x000C
+61, 1, load address 0X0639 into the PC
+62, 40, execute ISR for device 6
+102, 1, IRET - end interrupt service
+103, 265, start IO for device 6
+368, 99, CPU burst of 99 ms
+467, 72, CPU burst of 72 ms
+539, 1, switch to kernel mode
+540, 10, context saved
+550, 1, find vector 13 in memory position 0x001A
+551, 1, load address 0X06C7 into the PC
+552, 40, execute ISR for device 13
+592, 1, IRET - end interrupt service
+593, 636, start IO for device 13
+1229, 29, CPU burst of 29 ms
+1258, 19, CPU burst of 19 ms
+1277, 1, switch to kernel mode
+1278, 10, context saved
+1288, 1, find vector 8 in memory position 0x0010
+1289, 1, load address 0X06EF into the PC
+1290, 40, execute ISR for device 8
+1330, 1, IRET - end interrupt service
+1331, 1000, start IO for device 8
+2331, 66, CPU burst of 66 ms
+2397, 11, CPU burst of 11 ms
+2408, 1, switch to kernel mode
+2409, 10, context saved
+2419, 1, find vector 4 in memory position 0x0008
+2420, 1, load address 0X0292 into the PC
+2421, 40, execute ISR for device 4
+2461, 1, IRET - end interrupt service
+2462, 250, start IO for device 4
+2712, 21, CPU burst of 21 ms
+2733, 100, CPU burst of 100 ms
+2833, 1, switch to kernel mode
+2834, 10, context saved
+2844, 1, find vector 18 in memory position 0x0024
+2845, 1, load address 0X060A into the PC
+2846, 40, execute ISR for device 18
+2886, 1, IRET - end interrupt service
+2887, 123, start IO for device 18
+3010, 41, CPU burst of 41 ms
+3051, 10, CPU burst of 10 ms
+3061, 1, switch to kernel mode
+3062, 10, context saved
+3072, 1, find vector 12 in memory position 0x0018
+3073, 1, load address 0X03B9 into the PC
+3074, 40, execute ISR for device 12
+3114, 1, IRET - end interrupt service
+3115, 145, start IO for device 12
+3260, 76, CPU burst of 76 ms
+3336, 12, CPU burst of 12 ms
+3348, 1, switch to kernel mode
+3349, 10, context saved
+3359, 1, find vector 15 in memory position 0x001E
+3360, 1, load address 0X0584 into the PC
+3361, 40, execute ISR for device 15
+3401, 1, IRET - end interrupt service
+3402, 68, start IO for device 15
+3470, 57, CPU burst of 57 ms
+3527, 93, CPU burst of 93 ms
+3620, 1, switch to kernel mode
+3621, 10, context saved
+3631, 1, find vector 11 in memory position 0x0016
+3632, 1, load address 0X01F8 into the PC
+3633, 40, execute ISR for device 11
+3673, 1, IRET - end interrupt service
+3674, 523, start IO for device 11
+4197, 56, CPU burst of 56 ms
+4253, 38, CPU burst of 38 ms
+4291, 1, switch to kernel mode
+4292, 10, context saved
+4302, 1, find vector 8 in memory position 0x0010
+4303, 1, load address 0X06EF into the PC
+4304, 40, execute ISR for device 8
+4344, 1, IRET - end interrupt service
+4345, 1000, start IO for device 8
+5345, 12, CPU burst of 12 ms
+5357, 53, CPU burst of 53 ms
+5410, 1, switch to kernel mode
+5411, 10, context saved
+5421, 1, find vector 13 in memory position 0x001A
+5422, 1, load address 0X06C7 into the PC
+5423, 40, execute ISR for device 13
+5463, 1, IRET - end interrupt service
+5464, 636, start IO for device 13
+6100, 10, CPU burst of 10 ms
+6110, 85, CPU burst of 85 ms
+6195, 1, switch to kernel mode
+6196, 10, context saved
+6206, 1, find vector 19 in memory position 0x0026
+6207, 1, load address 0X0765 into the PC
+6208, 40, execute ISR for device 19
+6248, 1, IRET - end interrupt service
+6249, 652, start IO for device 19
+6901, 81, CPU burst of 81 ms
+6982, 19, CPU burst of 19 ms
+... (199 lines left)
