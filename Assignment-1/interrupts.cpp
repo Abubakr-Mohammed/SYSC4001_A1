@@ -49,6 +49,27 @@ int main(int argc, char** argv) {
             // Step 3: find vector in memory (1 ms)
             char vectoraddr[10];
             snprintf(vectoraddr, sizeof(vectoraddr), "0x%04X", ADDR_BASE + devnum * VECTOR_SIZE);
+            execution += std::to_string(current_time) + ", 1, find vector " +
+                         std::to_string(devnum) +
+                         " in memory position " + vectoraddr + "\n";
+            current_time += 1;
+            // Step 4: load address in PC (1 ms)
+            execution += std::to_string(current_time) + ", 1, load address " +
+                         vectors.at(devnum) + " into the PC\n";
+            current_time += 1;
+            // Step 5: execute ISR (40 ms)
+            execution += std::to_string(current_time) + ", 40, execute ISR for device " +
+                         std::to_string(devnum) + "\n";
+            current_time += 40;
+            // Step 6: IRET (1 ms)
+            execution += std::to_string(current_time) + ", 1, IRET - end interrupt service\n";
+            current_time += 1;
+            // Step 7: start IO for device
+            int io_time = delays.at(devnum);
+            execution += std::to_string(current_time) + ", " +
+                         std::to_string(io_time) +
+                         ", start IO for device " + std::to_string(devnum) + "\n";
+            current_time += io_time;
         }
 
 
