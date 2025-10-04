@@ -25,4 +25,4 @@
 992, 1, IRET - end interrupt service
 993, 456, start IO for device 14
 1449, 31, CPU burst of 31 ms
-1480, 52, CPU burst of 52 ms
+1480, 52, CPU burst of 52 ms 
