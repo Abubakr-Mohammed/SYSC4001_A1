@@ -7,22 +7,40 @@
 148, 1, IRET - end interrupt service
 149, 265, start IO for device 6
 414, 26, CPU burst of 26 ms
-440, 72, CPU burst of 72 ms
-512, 1, switch to kernel mode
-513, 10, context saved
-523, 1, find vector 17 in memory position 0x0022
-524, 1, load address 0X05B3 into the PC
-525, 40, execute ISR for device 17
-565, 1, IRET - end interrupt service
-566, 235, start IO for device 17
-801, 50, CPU burst of 50 ms
-851, 88, CPU burst of 88 ms
-939, 1, switch to kernel mode
-940, 10, context saved
-950, 1, find vector 14 in memory position 0x001C
-951, 1, load address 0X0165 into the PC
-952, 40, execute ISR for device 14
-992, 1, IRET - end interrupt service
-993, 456, start IO for device 14
-1449, 31, CPU burst of 31 ms
-1480, 52, CPU burst of 52 ms 
+440, 1, switch to kernel mode
+441, 10, context saved
+451, 1, find vector 6 in memory position 0x000C
+452, 1, load address 0X0639 into the PC
+453, 40, handle IO completion for device 6
+493, 1, IRET - end interrupt service
+494, 72, CPU burst of 72 ms
+566, 1, switch to kernel mode
+567, 10, context saved
+577, 1, find vector 17 in memory position 0x0022
+578, 1, load address 0X05B3 into the PC
+579, 40, execute ISR for device 17
+619, 1, IRET - end interrupt service
+620, 235, start IO for device 17
+855, 50, CPU burst of 50 ms
+905, 1, switch to kernel mode
+906, 10, context saved
+916, 1, find vector 17 in memory position 0x0022
+917, 1, load address 0X05B3 into the PC
+918, 40, handle IO completion for device 17
+958, 1, IRET - end interrupt service
+959, 88, CPU burst of 88 ms
+1047, 1, switch to kernel mode
+1048, 10, context saved
+1058, 1, find vector 14 in memory position 0x001C
+1059, 1, load address 0X0165 into the PC
+1060, 40, execute ISR for device 14
+1100, 1, IRET - end interrupt service
+1101, 456, start IO for device 14
+1557, 31, CPU burst of 31 ms
+1588, 1, switch to kernel mode
+1589, 10, context saved
+1599, 1, find vector 14 in memory position 0x001C
+1600, 1, load address 0X0165 into the PC
+1601, 40, handle IO completion for device 14
+1641, 1, IRET - end interrupt service
+1642, 52, CPU burst of 52 ms
