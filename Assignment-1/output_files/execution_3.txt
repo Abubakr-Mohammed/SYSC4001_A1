@@ -98,4 +98,4 @@
 6249, 652, start IO for device 19
 6901, 81, CPU burst of 81 ms
 6982, 19, CPU burst of 19 ms
-... (199 lines left)
+... (199 lines left) 
