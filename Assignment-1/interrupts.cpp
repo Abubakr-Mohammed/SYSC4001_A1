@@ -22,7 +22,7 @@ int main(int argc, char* argv[]) {
     
     std::ifstream inputfile(argv[1]);
     std::string trace;
-    std::string execution; // Log content for execution.txt
+    std::string execution; 
 
     int current_time = 0;
     while (std::getline(inputfile, trace)) {
@@ -37,7 +37,6 @@ int main(int argc, char* argv[]) {
         }
         else if (activity == "SYSCALL") {
             int devnum = duration_intr;
-            // Interrupt boilerplate steps using macros ADDR_BASE and VECTOR_SIZE
             // Step 1: switch to kernel mode (1 ms)
             execution += std::to_string(current_time) + ", 1, switch to kernel mode\n";
             current_time += 1;
@@ -88,12 +87,19 @@ int main(int argc, char* argv[]) {
             execution += std::to_string(current_time) + ", 1, load address " +
                         vectors.at(devnum) + " into the PC\n";
             current_time += 1;
-            // Step 5: Execute ISR for IO completion (label this clearly)
+            // Step 5: Execute ISR for IO completion 
             execution += std::to_string(current_time) + ", 40, handle IO completion for device " +
                         std::to_string(devnum) + "\n";
             current_time += 40;
             // Step 6: IRET (1 ms)
             execution += std::to_string(current_time) + ", 1, IRET - end interrupt service\n";
             current_time += 1;
-            // (Optional: No further IO starts here unless requirement states so)
         }
+    }
+    inputfile.close()
+
+    write_output(execution);
+
+    return 0;
+}
+
