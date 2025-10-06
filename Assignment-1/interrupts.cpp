@@ -15,7 +15,6 @@
 #include <cstdio>
 
 int main(int argc, char* argv[]) {
-    // Use parse_args (not parseargs)
     auto args_tuple = parse_args(argc, argv);
     std::vector<std::string> vectors = std::get<0>(args_tuple);
     std::vector<int> delays = std::get<1>(args_tuple);
@@ -25,8 +24,8 @@ int main(int argc, char* argv[]) {
     std::string execution; 
 
     int current_time = 0;
+    //parse each line of the input trace file
     while (std::getline(inputfile, trace)) {
-        // Use parse_trace (not parsetrace)
         auto [activity, duration_intr] = parse_trace(trace);
 
         if (activity == "CPU") {
@@ -73,7 +72,7 @@ int main(int argc, char* argv[]) {
             // Step 1: Switch to kernel mode (1 ms)
             execution += std::to_string(current_time) + ", 1, switch to kernel mode\n";
             current_time += 1;
-            // Step 2: Context saved (10 ms or as configured)
+            // Step 2: Context saved (10ms/20ms/30ms)
             execution += std::to_string(current_time) + ", 10, context saved\n";
             current_time += 10;
             // Step 3: Find vector in memory (1 ms)
@@ -87,7 +86,7 @@ int main(int argc, char* argv[]) {
             execution += std::to_string(current_time) + ", 1, load address " +
                         vectors.at(devnum) + " into the PC\n";
             current_time += 1;
-            // Step 5: Execute ISR for IO completion 
+            // Step 5: Execute ISR for IO completion(value configured for various ISR exec. timings) 
             execution += std::to_string(current_time) + ", 40, handle IO completion for device " +
                         std::to_string(devnum) + "\n";
             current_time += 40;
